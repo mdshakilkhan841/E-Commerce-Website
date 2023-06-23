@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaHeart, FaStar } from "react-icons/fa"
+import { FaFacebook, FaTwitter, FaInstagram, FaHeart, FaStar } from "react-icons/fa";
 
 const ProductDetails = () => {
     return (

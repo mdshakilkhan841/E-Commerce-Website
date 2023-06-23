@@ -4,7 +4,7 @@ import { FaShopify, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa"
 const Footer = () => {
     return (
         <footer className="px- w-full divide-y bg-gray-800 text-gray-100">
-            <div className="container flex flex-col justify-between py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
+            <div className="container flex flex-col justify-between px-6 py-10 mx-auto space-y-8 lg:flex-row lg:space-y-0">
                 <div className="lg:w-1/3">
                     <a
                         rel="noopener noreferrer"

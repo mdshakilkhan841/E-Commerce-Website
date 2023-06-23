@@ -57,10 +57,10 @@ const Navbar = () => {
                             <Link to={"/products"} >Products</Link>
                         </li>
                         <li className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300 md:hover:bg-transparent">
-                            About
+                            <Link to={"/about"}>About</Link>
                         </li>
                         <li className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300  md:hover:bg-transparent">
-                            Contact
+                            <Link to={"/contact"}>Contact</Link>
                         </li>
                     </ul>
                 </div>
@@ -69,7 +69,7 @@ const Navbar = () => {
                     {/*---- Cart div ----*/}
                     <div className="mr-3 flex relative justify-center items-center cursor-pointer">
                         <BsCart3 className="text-3xl mr-2" />
-                        <span class="absolute top-0 right-0 rounded-full bg-green-200 text-pink-600 w-5 h-4 p-0 m-0 font-mono text-sm leading-tight text-center">
+                        <span className="absolute top-0 right-0 rounded-full bg-green-200 text-pink-600 w-5 h-4 p-0 m-0 font-mono text-sm leading-tight text-center">
                             5
                         </span>
                     </div>
