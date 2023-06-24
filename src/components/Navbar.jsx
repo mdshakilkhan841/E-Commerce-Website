@@ -32,7 +32,7 @@ const Navbar = () => {
             setMobileMenu(false);
             setUserMenuVisible(false);
         };
-    },[]);
+    }, []);
 
 
     //-------------------------- -----------------------------//
@@ -115,6 +115,11 @@ const Navbar = () => {
                         }
                     >
                         <ul className="list-reset">
+                            <li>
+                                <Link to={"/login"} className="px-4 py-2 block text-gray-900 hover:bg-gray-200  hover: cursor-pointer">
+                                    Login
+                                </Link>
+                            </li>
                             <li className="px-4 py-2 block text-gray-900 hover:bg-gray-200  hover: cursor-pointer">
                                 My account
                             </li>

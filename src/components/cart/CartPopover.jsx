@@ -37,7 +37,7 @@ const CartPopover = () => {
             <div
                 className={
                     isUserMenuVisible
-                        ? "shadow-md mt-12 absolute top-0 -right-6 min-w-[400px] max-h-[520px] overflow-y-auto"
+                        ? "shadow-md mt-12 absolute top-0 -right-6 min-w-[400px] max-h-[550px] overflow-y-auto"
                         : "absolute invisible"
                 }
             >
