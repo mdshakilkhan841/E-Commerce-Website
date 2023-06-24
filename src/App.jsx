@@ -9,6 +9,7 @@ import ProductDetails from "./components/product/ProductDetails";
 import Checkout from "./components/cart/Checkout";
 import Error404 from "./components/Error404";
 import Login from "./components/Login";
+import SignUp from "./components/Signup";
 
 function App() {
     return (
@@ -17,6 +18,7 @@ function App() {
                 <Navbar />
                 <Routes>
                     <Route path="/login" element={<Login/>}/>
+                    <Route path="/signup" element={<SignUp/>}/>
                     <Route path="/" element={<Home/>}/>
                     <Route path="/contact" element={<Contact/>}/>
                     <Route path="/products" element={<Products/>}/>

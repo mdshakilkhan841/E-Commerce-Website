@@ -1,5 +1,6 @@
 import React from 'react';
-import BD from "../assets/bd-flag.png"
+import BD from "../assets/bd-flag.png";
+import { Link } from 'react-router-dom';
 
 
 const Login = () => {
@@ -35,7 +36,7 @@ const Login = () => {
                             <button type="submit" className="w-full px-8 py-3 font-semibold rounded-md bg-pink-400 hover:bg-pink-500 text-white">Sign in</button>
                         </div>
                         <p className="px-6 text-sm text-center">Don't have an account yet ?
-                            <a href="#" className="hover:underline text-blue-500"> Create an account</a>
+                            <Link to={"/signup"} className="hover:underline text-blue-500"> Create an account</Link>
                         </p>
                     </div>
                 </form>

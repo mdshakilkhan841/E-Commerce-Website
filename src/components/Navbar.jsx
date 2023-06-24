@@ -120,6 +120,11 @@ const Navbar = () => {
                                     Login
                                 </Link>
                             </li>
+                            <li>
+                                <Link to={"/signup"} className="px-4 py-2 block text-gray-900 hover:bg-gray-200  hover: cursor-pointer">
+                                    Signup
+                                </Link>
+                            </li>
                             <li className="px-4 py-2 block text-gray-900 hover:bg-gray-200  hover: cursor-pointer">
                                 My account
                             </li>
