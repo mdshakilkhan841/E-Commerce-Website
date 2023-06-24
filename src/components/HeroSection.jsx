@@ -13,7 +13,7 @@ const HeroSection = () => {
         <div>
             <Fade duration={3000}>
                 {images?.map((image, index) => (
-                    <div key={`fade-${index}`} className='w-full md:h-full h-48 flex justify-center object-cover pt-10'>
+                    <div key={`fade-${index}`} className='w-full md:h-full h-48 flex justify-center object-cover mt-16'>
                         <img src={image} alt={`Slide ${index + 1}`} />
                     </div>
                 ))}

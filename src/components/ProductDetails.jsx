@@ -17,7 +17,7 @@ const ProductDetails = () => {
             <ScrollTop/>
             <div className="container px-5 py-24 mx-auto">
                 <div className='md:absolute'>
-                    <button className="flex items-center space-x-2 bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button" onClick={goToPreviousPage}>
+                    <button className="flex items-center space-x-2 bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150" type="button" onClick={goToPreviousPage}>
                         <FaArrowLeft /><span>Back</span>
                     </button>
                 </div>
@@ -68,7 +68,7 @@ const ProductDetails = () => {
                         </div>
                         <div className="flex items-center">
                             <span className="title-font font-medium text-2xl text-gray-900"><span className='font-extrabold'>৳ </span>58.00</span>
-                            <button className="flex ml-auto bg-pink-500 text-white active:bg-pink-600 font-bold text- px-3 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150" type="button"
+                            <button className="flex ml-auto bg-pink-500 text-white active:bg-pink-600 font-bold text- px-3 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150" type="button"
                             >
                                 Add to Cart
                             </button>

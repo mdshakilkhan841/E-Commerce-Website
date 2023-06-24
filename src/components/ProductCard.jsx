@@ -101,7 +101,7 @@ const ProductCard = () => {
                                                 src={item.image}
                                             />
                                         </div>
-                                        <div className="mt-2 p-2">
+                                        <div className="mt-2 p-3">
                                             <Link to={"/product-details"}>
                                                 <h3 className="text-gray-500 text-xs hover:font-semibold uppercase tracking-widest title-font">
                                                     {item.category}
@@ -110,12 +110,12 @@ const ProductCard = () => {
                                                     {item.title}
                                                 </h2>
                                             </Link>
-                                            <div className="flex justify-between mt-1">
+                                            <div className="flex items-center justify-between mt-1">
                                                 <p className="">
                                                     <span className="font-extrabold">৳ </span>{item.price}
                                                 </p>
                                                 <button
-                                                    className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+                                                    className="bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded-full shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
                                                     type="button"
                                                 >
                                                     Add to Cart
