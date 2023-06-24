@@ -1,5 +1,5 @@
 import React from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/product/ProductCard";
 import { IoChevronBack, IoChevronForward } from "react-icons/io5"
 
 const Products = () => {

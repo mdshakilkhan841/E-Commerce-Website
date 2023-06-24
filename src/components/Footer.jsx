@@ -15,7 +15,7 @@ const Footer = () => {
                             <FaShopify/>
                         </div>
                         <span className="self-center text-2xl font-semibold">
-                            E-Commerce
+                            E-Shop
                         </span>
                     </a>
                 </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import SkeletonLoader from "../components/SkeletonLoader";
+import SkeletonLoader from "../loader/SkeletonLoader";
 
 const ProductCard = () => {
 
@@ -76,7 +76,7 @@ const ProductCard = () => {
             "image": "https://dummyimage.com/420x260"
         },
         {
-            "id": 9,
+            "id": 11,
             "category": "Garden",
             "title": "Plant Pot",
             "price": 7.99,

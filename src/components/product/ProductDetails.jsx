@@ -2,7 +2,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import { FaFacebook, FaTwitter, FaInstagram, FaHeart, FaStar, FaArrowLeft } from "react-icons/fa";
-import ScrollTop from './ScrollTop';
+import ScrollTop from '../ScrollTop';
 
 const ProductDetails = () => {
 

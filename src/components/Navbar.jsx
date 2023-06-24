@@ -2,8 +2,9 @@ import { useState, useEffect, useRef } from "react";
 import { FiMenu, FiChevronDown } from "react-icons/fi";
 import { FaShopify } from "react-icons/fa";
 import { MdClose } from "react-icons/md";
-import { BsCart3 } from "react-icons/bs";
+// import { BsCart3 } from "react-icons/bs";
 import { Link } from "react-router-dom";
+import CartPopover from "./cart/CartPopover";
 
 const Navbar = () => {
     const [mobileMenu, setMobileMenu] = useState(false);
@@ -26,6 +27,14 @@ const Navbar = () => {
         };
     }, []);
 
+    useEffect(() => {
+        return () => {
+            setMobileMenu(false);
+            setUserMenuVisible(false);
+        };
+    },[]);
+
+
     //-------------------------- -----------------------------//
 
     return (
@@ -39,8 +48,8 @@ const Navbar = () => {
                     className="flex flex-row items-center justify-between md:w-auto md:static md:justify-start space-x-2 cursor-pointer"
                 >
                     <FaShopify className="text-2xl" />
-                    <div className="text-md font-bold leading-relaxed italic">
-                        E-Commerce
+                    <div className="text-kg font-bold leading-relaxed italic">
+                        E-Shop
                     </div>
                 </Link>
 
@@ -53,26 +62,33 @@ const Navbar = () => {
                     }
                 >
                     <ul className="w-full flex flex-col md:flex-row list-none md:ml-auto md:border-0 border-t border-black">
-                        <li className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300 md:hover:bg-transparent">
-                            <Link to={"/products"} >Products</Link>
+                        <li>
+                            <Link to={"/products"} className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300 md:hover:bg-transparent" >
+                                Products
+                            </Link>
                         </li>
-                        <li className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300 md:hover:bg-transparent">
-                            <Link to={"/about"}>About</Link>
+                        <li>
+                            <Link to={"/about"} className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300 md:hover:bg-transparent">
+                                About
+                            </Link>
                         </li>
-                        <li className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300  md:hover:bg-transparent">
-                            <Link to={"/contact"}>Contact</Link>
+                        <li>
+                            <Link to={"/contact"} className="md:px-3 px-8 py-2 flex items-center text-base font-semibold hover:font-bold leading-snug text-black cursor-pointer hover:bg-fuchsia-300  md:hover:bg-transparent">
+                                Contact
+                            </Link>
                         </li>
                     </ul>
                 </div>
 
                 <div className="flex relative float-right">
                     {/*---- Cart div ----*/}
-                    <div className="mr-3 flex relative justify-center items-center cursor-pointer">
+                    {/* <div className="mr-3 flex relative justify-center items-center cursor-pointer">
                         <BsCart3 className="text-3xl mr-2" />
                         <span className="absolute top-0 right-0 rounded-full bg-green-200 text-pink-600 w-5 h-4 p-0 m-0 font-mono text-sm leading-tight text-center">
                             5
                         </span>
-                    </div>
+                    </div> */}
+                    <CartPopover />
 
                     {/*---- Profile Div ----*/}
                     <button
