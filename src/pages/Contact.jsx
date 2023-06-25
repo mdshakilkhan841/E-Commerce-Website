@@ -3,7 +3,7 @@ import { HiLocationMarker, HiPhone, HiMail } from "react-icons/hi"
 
 const Contact = () => {
     return (
-        <section className="py-6 dark:bg-gray-800 dark:text-gray-50 mt-20 mb-10">
+        <section className="py-6 mt-20 mb-10">
             <div className="grid max-w-6xl grid-cols-1 px-6 mx-auto lg:px-8 md:grid-cols-2 md:divide-x divide-black">
                 <div className="py-6 md:px-6">
                     <h1 className="text-4xl font-bold">Get in touch</h1>
@@ -23,10 +23,10 @@ const Contact = () => {
                         </p>
                     </div>
                 </div>
-                <div className="p-6 text-gray-100">
+                <div className="p-6">
                     <form
                         noValidate=""
-                        className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded-md shadow bg-gray-900"
+                        className="container w-full max-w-xl p-8 mx-auto space-y-6 rounded shadow bg-gray-100"
                     >
                         <h2 className="w-full text-3xl font-bold leadi">Contact us</h2>
                         <div>
@@ -38,7 +38,7 @@ const Contact = () => {
                                 type="text"
                                 placeholder="Your name"
                                 required=""
-                                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800"
+                                className="bg-white block w-full p-2 rounded border border-gray-300 focus:ring-2 focus:ring-pink-300 focus:outline-none"
                             />
                         </div>
                         <div>
@@ -50,7 +50,7 @@ const Contact = () => {
                                 type="email"
                                 placeholder="Your email"
                                 required=""
-                                className="block w-full p-2 rounded focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800"
+                                className="bg-white block w-full p-2 rounded border border-gray-300 focus:ring-2 focus:ring-pink-300 focus:outline-none"
                             />
                         </div>
                         <div>
@@ -61,13 +61,13 @@ const Contact = () => {
                                 id="message"
                                 type="text"
                                 placeholder="Message..."
-                                className="block w-full p-2 rounded autoexpand focus:outline-none focus:ring focus:ri focus:ri dark:bg-gray-800"
+                                className="bg-white block w-full p-2 rounded border border-gray-300 focus:ring-2 focus:ring-pink-300 focus:outline-none"
                             ></textarea>
                         </div>
                         <div>
                             <button
-                                type="submit"
-                                className="w-full px-4 py-2 font-bold rounded shadow focus:outline-none focus:ring hover:ring focus:ri bg-pink-500 focus:ri hover:ri dark:text-gray-900"
+                                type="button"
+                                className="w-full px-4 py-2 font-bold text-white rounded focus:outline-none bg-pink-400 hover:bg-pink-500"
                             >
                                 Send
                             </button>

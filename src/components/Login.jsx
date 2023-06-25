@@ -19,7 +19,7 @@ const Login = () => {
                                 
                                 <img src={BD} alt="Bangladesh Flag" className="w-6 h-auto ml-2 mr-2" />
                                 <span className='pr-1.5'>+880</span>
-                                <input type="tel" pattern="[0-9]{10}" required placeholder="xxx xxx xxxx" className="w-full bg-white rounded-r border-l border-gray-300 focus:ring-2 focus:ring-pink-300 text-base outline-none text-gray-700 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out" />
+                                <input type="tel" pattern="[0-9]{10}" required placeholder="XXX XXX XXXX" className="w-full bg-white rounded-r border-l border-gray-300 focus:ring-2 focus:ring-pink-300 text-base outline-none text-gray-700 py-1 px-1 leading-8 transition-colors duration-200 ease-in-out" />
                             </div>
 
                         </div>

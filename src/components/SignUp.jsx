@@ -4,7 +4,7 @@ import BD from "../assets/bd-flag.png"
 const SignUp = () => {
     return (
         <div>
-            <div class="mt-16 py-10">
+            <div class="mt-16 py-16">
                 <form class="relative border border-gray-100 space-y-3 max-w-screen-md mx-auto rounded-md bg-gray-100 p-6 shadow lg:p-10">
                     <h1 class="mb-6 text-xl font-semibold lg:text-2xl">Create Account</h1>
 
@@ -14,7 +14,7 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 placeholder="Your Name" required
-                                class="mt-2 h-12 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
+                                class="mt-2 h-10 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
                             />
                         </div>
                         <div>
@@ -22,7 +22,7 @@ const SignUp = () => {
                             <input
                                 type="text"
                                 placeholder="Last  Name"
-                                class="mt-2 h-12 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
+                                class="mt-2 h-10 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
                             />
                         </div>
                     </div>
@@ -30,7 +30,7 @@ const SignUp = () => {
                     <div class="grid gap-3 md:grid-cols-2">
                         <div>
                             <label class=""> Gender <span className="text-red-600 font-bold">*</span> </label>
-                            <select required={true} class="mt-2 h-12 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white py-2 px-3">
+                            <select required={true} class="mt-2 h-10 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white py-2 px-3">
                                 <option value="" defaultValue>
                                     Select
                                 </option>
@@ -49,7 +49,7 @@ const SignUp = () => {
                                 <input
                                     type="tel" pattern="[0-9]{10}" required
                                     placeholder="XXX XXX XXXX"
-                                    class="h-12 w-full rounded-r border-l focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
+                                    class="h-10 w-full rounded-r border-l focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
                                 />
                             </div>
                         </div>
@@ -59,7 +59,7 @@ const SignUp = () => {
                         <input
                             type="password"
                             placeholder="********"
-                            class="mt-2 h-12 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
+                            class="mt-2 h-10 w-full rounded border focus:ring-2  focus:ring-pink-300 text-base outline-none border-gray-300 bg-white px-3"
                         />
                     </div>
 

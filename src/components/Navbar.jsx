@@ -43,15 +43,21 @@ const Navbar = () => {
             className="fixed w-full z-10 top-0 shadow flex flex-wrap items-center justify-between px-2 py-3 bg-fuchsia-200"
         >
             <div className="container px-4 mx-auto flex flex-row flex-wrap items-center justify-between">
-                <Link
-                    to={"/"}
-                    className="flex flex-row items-center justify-between md:w-auto md:static md:justify-start space-x-2 cursor-pointer"
-                >
-                    <FaShopify className="text-2xl" />
-                    <div className="text-kg font-bold leading-relaxed italic">
-                        E-Shop
+                <div className="flex flex-row space-x-4">
+                    <Link to={"/"} className="flex flex-row items-center justify-between md:w-auto md:static md:justify-start space-x-2 cursor-pointer">
+                        <FaShopify className="text-2xl" />
+                        <div className="text-lg font-bold leading-relaxed italic">
+                            E-Shop
+                        </div>
+                    </Link>
+                    <div>
+                        <Link to={"/e-shop-admin"}>
+                            <button className="flex items-center space-x-2 bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150" type="button">
+                                <span>Admin</span>
+                            </button>
+                        </Link>
                     </div>
-                </Link>
+                </div>
 
                 <div
                     className={
