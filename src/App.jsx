@@ -16,7 +16,13 @@ import Error404 from "./components/Error404";
 
 //Admin Component
 import SideNav from "./components/Admin/SideNav";
-import Order from "./components/Admin/Order";
+import AdminHome from "./pages/Admin/AdminHome";
+import Dashboard from "./pages/Admin/Dashboard";
+import Orders from "./pages/Admin/Orders";
+import ProductList from "./pages/Admin/ProductList";
+import Customers from "./pages/Admin/Customers";
+import Employees from "./pages/Admin/Employees";
+
 
 function App() {
     return (
@@ -65,7 +71,12 @@ function AdminLayout() {
                     <div className="h-full bg-gray-100 shadow-lg rounded-lg overflow-x-auto">
                         {/* content */}
                         <Routes>
-                            <Route path="/orders" element={<Order />} />
+                            <Route path="/" element={<AdminHome/>} />
+                            <Route path="/dashboard" element={<Dashboard />} />
+                            <Route path="/all-products" element={<ProductList/>} />
+                            <Route path="/orders" element={<Orders />} />
+                            <Route path="/customers" element={<Customers/>} />
+                            <Route path="/employees" element={<Employees/>} />
                         </Routes>
                     </div>
                 </div>
