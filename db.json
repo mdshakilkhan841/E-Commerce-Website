@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "firstName": "Shakil",
+      "lastName": "Khan",
+      "gender": "Male",
+      "mobile": "8801521438781",
+      "password": "1234",
+      "id": 1
+    },
+    {
+      "firstName": "Fahim",
+      "lastName": "Ali",
+      "gender": "Male",
+      "mobile": "8801858694464",
+      "password": "sdf4",
+      "id": 2
+    },
+    {
+      "firstName": "Rakib",
+      "lastName": "Khan",
+      "gender": "Male",
+      "mobile": "8801845218665",
+      "password": "1234",
+      "id": 3
+    },
+    {
+      "firstName": "Shakib",
+      "lastName": "Khan",
+      "gender": "Male",
+      "mobile": "8801846758225",
+      "password": "1234",
+      "createDate": "2023-06-25T23:53:46.616Z",
+      "id": 4
+    },
+    {
+      "firstName": "Sabrina",
+      "lastName": "Rashid",
+      "gender": "Female",
+      "mobile": "8801764284146",
+      "password": "1234",
+      "createDate": "6/26/2023",
+      "id": 5
+    }
+  ]
+}

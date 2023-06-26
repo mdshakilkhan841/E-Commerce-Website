@@ -1,37 +1,92 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
-import { FaFacebook, FaTwitter, FaInstagram, FaHeart, FaStar, FaArrowLeft, FaAngleDown } from "react-icons/fa";
-import ScrollTop from '../ScrollTop';
+import {
+    FaFacebook,
+    FaTwitter,
+    FaInstagram,
+    FaHeart,
+    FaStar,
+    FaArrowLeft,
+    FaAngleDown,
+} from "react-icons/fa";
+import ScrollTop from "../ScrollTop";
+import Error404 from "../Error404";
 
 const ProductDetails = () => {
-
+    const [item, setItem] = useState({});
     const navigate = useNavigate();
+    const { id } = useParams();
 
-    const goToPreviousPage = () => {
-        navigate(-1);
+    useEffect(() => {
+        getSingleProduct();
+    }, []);
+
+    const getSingleProduct = async () => {
+        axios
+            .get(`https://fakestoreapi.com/products/${id}`)
+            .then((res) => setItem(res.data));
     };
+
+    const handleAddCart = (item, redirect) => {
+        console.log(item);
+        const cart = JSON.parse(localStorage.getItem("cart")) || [];
+        const isProductExist = cart.find((prevItem) => prevItem.id === item.id);
+        if (isProductExist) {
+            const updatedCart = cart.map((product) => {
+                if (product.id === item.id) {
+                    return { ...product, quantity: product.quantity + 1 }
+                }
+                return product
+            })
+            localStorage.setItem("cart", JSON.stringify(updatedCart))
+        } else {
+            localStorage.setItem("cart", JSON.stringify([...cart, { ...item, quantity: 1 }]))
+        }
+
+        //redirect (true) use for instant Buy Now button
+        if(redirect){
+            navigate("/product-checkout")
+        }
+    };
+
+    // if(!Object.keys(item).length > 0) return <Error404 />
 
     return (
         <section className="text-gray-600 body-font overflow-hidden">
-            <ScrollTop/>
+            <ScrollTop />
             <div className="container px-5 py-24 mx-auto">
-                <div className='md:absolute'>
-                    <button className="flex items-center space-x-2 bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150" type="button" onClick={goToPreviousPage}>
-                        <FaArrowLeft /><span>Back</span>
+                <div className="md:absolute">
+                    <button
+                        className="flex items-center space-x-2 bg-pink-500 text-white active:bg-pink-600 font-bold text-xs px-4 py-2 rounded shadow hover:shadow-md outline-none focus:outline-none ease-linear transition-all duration-150"
+                        type="button"
+                        onClick={() => navigate(-1)}
+                    >
+                        <FaArrowLeft />
+                        <span>Back</span>
                     </button>
                 </div>
                 <div className="lg:w-4/5 mx-auto flex flex-wrap">
-                    <img alt="e-commerce" className="lg:w-1/2 w-full lg:h-auto h-64 object-cover object-center rounded" src="https://dummyimage.com/400x400" />
+                    <img
+                        alt="e-commerce"
+                        className="lg:w-1/2 w-full lg:h-auto max-h-[500px] object-contain object-center rounded"
+                        src={item?.image}
+                    />
                     <div className="lg:w-1/2 w-full lg:pl-10 lg:py-6 mt-6 lg:mt-0">
-                        <h2 className="text-sm title-font text-gray-500 tracking-widest">BRAND NAME</h2>
-                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">The Catcher in the Rye</h1>
+                        <h2 className="text-sm title-font capitalize text-gray-500 tracking-widest">
+                            {item?.category}
+                        </h2>
+                        <h1 className="text-gray-900 text-3xl title-font font-medium mb-1">
+                            {item?.title}
+                        </h1>
                         <div className="flex mb-4">
                             <span className="flex items-center">
-                                <FaStar className='text-indigo-500' />
-                                <FaStar className='text-indigo-500' />
-                                <FaStar className='text-indigo-500' />
-                                <FaStar className='text-indigo-500' />
+                                <FaStar className="text-indigo-500" />
+                                <FaStar className="text-indigo-500" />
+                                <FaStar className="text-indigo-500" />
+                                <FaStar className="text-indigo-500" />
                                 <FaStar />
                                 <span className="text-gray-600 ml-3">4 Reviews</span>
                             </span>
@@ -41,7 +96,9 @@ const ProductDetails = () => {
                                 <FaInstagram />
                             </span>
                         </div>
-                        <p className="leading-relaxed text-justify">Fam locavore kickstarter distillery. Mixtape chillwave tumeric sriracha taximy chia microdosing tilde DIY. XOXO fam indxgo juiceramps cornhole raw denim forage brooklyn. Everyday carry +1 seitan poutine tumeric. Gastropub blue bottle austin listicle pour-over, neutra jean shorts keytar banjo tattooed umami cardigan.</p>
+                        <p className="leading-relaxed text-justify">
+                            {item?.description}
+                        </p>
                         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
                             <div className="flex">
                                 <span className="mr-3">Color</span>
@@ -59,14 +116,26 @@ const ProductDetails = () => {
                                         <option>XL</option>
                                     </select>
                                     <span className="absolute right-0 top-0 h-full w-10 text-center text-gray-600 pointer-events-none flex items-center justify-center">
-                                        <FaAngleDown/>
+                                        <FaAngleDown />
                                     </span>
                                 </div>
                             </div>
                         </div>
                         <div className="flex items-center">
-                            <span className="title-font font-medium text-2xl text-gray-900"><span className='font-extrabold'>৳ </span>58.00</span>
-                            <button className="flex ml-auto bg-pink-500 text-white active:bg-pink-600 font-bold text- px-3 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150" type="button"
+                            <span className="title-font font-medium text-2xl text-gray-900">
+                                <span className="font-extrabold">৳ </span>{item?.price}
+                            </span>
+                            <button
+                                className="flex ml-auto bg-pink-500 text-white active:bg-pink-600 font-bold text- px-3 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={() => handleAddCart(item, true)}
+                            >
+                                Buy Now
+                            </button>
+                            <button
+                                className="flex ml-4 bg-pink-500 text-white active:bg-pink-600 font-bold text- px-3 py-2 rounded-full shadow hover:shadow-lg outline-none focus:outline-none ease-linear transition-all duration-150"
+                                type="button"
+                                onClick={() => handleAddCart(item)}
                             >
                                 Add to Cart
                             </button>
@@ -78,7 +147,7 @@ const ProductDetails = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ProductDetails
+export default ProductDetails;

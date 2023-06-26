@@ -49,8 +49,8 @@ function UserLayout() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/signup" element={<SignUp />} />
                 <Route path="/contact" element={<Contact />} />
-                <Route path="/products/*" element={<Products />} />
-                <Route path="/product-details/*" element={<ProductDetails />} />
+                <Route path="/products" element={<Products />} />
+                <Route path="/products/:id" element={<ProductDetails />} />
                 <Route path="/product-checkout" element={<Checkout />} />
                 <Route path="*" element={<Error404 />} />
             </Routes>
