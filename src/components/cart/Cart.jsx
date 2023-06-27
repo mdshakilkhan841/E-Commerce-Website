@@ -3,15 +3,8 @@ import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link, useNavigate } from 'react-router-dom';
 
 const Cart = ({ carts, setCarts }) => {
-    const [total, setTotal] = useState(0);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        const total = carts?.reduce((acc, item) => {
-            return acc + item?.price * item?.quantity;
-        }, 0);
-        setTotal(total);
-    }, [carts]);
 
     const handleInc = (id) => {
         const updatedCart = carts?.map(item => {
@@ -81,15 +74,6 @@ const Cart = ({ carts, setCarts }) => {
                                                 <RiDeleteBin6Line className='text-lg' />
                                                 <span>Remove</span>
                                             </button>
-                                            <div className="sm:order-1 flex h-7 text-black px-3">
-                                                <button className="flex items-center justify-center rounded-l-sm bg-pink-300 px-4 transition hover:bg-pink-500 hover:text-white"
-                                                    onClick={() => handleDec(cart?.id)}
-                                                >-</button>
-                                                <div className="flex w-full items-center justify-center bg-gray-100 px-4 text-xs uppercase transition">{cart?.quantity}</div>
-                                                <button className="flex items-center justify-center rounded-r-sm bg-pink-300 px-4 transition hover:bg-pink-500 hover:text-white"
-                                                    onClick={() => handleInc(cart?.id)}
-                                                >+</button>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -98,17 +82,11 @@ const Cart = ({ carts, setCarts }) => {
                     })
                 }
             </ul>
-            <div className="space-y-1 text-right py-2">
-                <p>Total amount :
-                    <span className="font-semibold"> {total.toFixed(2)} <span className='font-extrabold'>৳ </span></span>
-                </p>
-                <p className="text-sm text-gray-400">Not including taxes and shipping costs</p>
-            </div>
+
             <div className="flex justify-end">
-                <Link to={"/product-checkout"}>
+                <Link to={"/product-checkout"} className='mt-4'>
                     <button className="flex bg-pink-500 text-white active:bg-pink-600 px-6 py-2 rounded shadow hover:shadow-lg outline-none focus:outline-none" type="button">
-                        <span className="sr-only sm:not-sr-only">Continue to</span>
-                        <span>Checkout</span>
+                        <span className="">Continue to Checkout</span>
                     </button>
                 </Link>
             </div>

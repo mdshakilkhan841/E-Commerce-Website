@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { FaLongArrowAltLeft, FaPlus, FaMinus } from "react-icons/fa";
+import { FaLongArrowAltLeft } from "react-icons/fa";
 
 const Checkout = () => {
     const navigate = useNavigate();
@@ -105,20 +105,25 @@ const Checkout = () => {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="flex items-center justify-center w-1/5">
-                                    <FaMinus
-                                        onClick={() => handleDec(cart?.id)}
-                                        className="fill-current text-gray-600 w-3 cursor-pointer"
-                                    />
-                                    <input
-                                        className="mx-2 border text-center w-8"
-                                        type="text"
-                                        value={cart?.quantity}
-                                    />
-                                    <FaPlus
-                                        onClick={() => handleInc(cart?.id)}
-                                        className="fill-current text-gray-600 w-3 cursor-pointer"
-                                    />
+                                    <div className="sm:order-1 flex h-7 text-black md:px-3">
+                                        <button
+                                            className="flex items-center justify-center rounded-l-sm bg-pink-300 md:px-4 px-3 transition hover:bg-pink-500 hover:text-white"
+                                            onClick={() => handleDec(cart?.id)}
+                                        >
+                                            -
+                                        </button>
+                                        <div className="flex w-full items-center justify-center bg-gray-100 md:px-4 px-3 text-xs uppercase transition">
+                                            {cart?.quantity}
+                                        </div>
+                                        <button
+                                            className="flex items-center justify-center rounded-r-sm bg-pink-300 md:px-4 px-3 transition hover:bg-pink-500 hover:text-white"
+                                            onClick={() => handleInc(cart?.id)}
+                                        >
+                                            +
+                                        </button>
+                                    </div>
                                 </div>
                                 <span className="text-center w-1/5 font-semibold text-sm">
                                     <span className="font-extrabold">৳ </span>
