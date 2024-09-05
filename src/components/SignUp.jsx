@@ -4,7 +4,7 @@ import axios from "axios";
 
 import BD from "../assets/bd-flag.png";
 
-const SignUp = () => {
+const Signup = () => {
     const navigate = useNavigate();
     const [userData, setUserData] = useState({
         firstName: "",
@@ -144,4 +144,4 @@ const SignUp = () => {
     );
 };
 
-export default SignUp;
+export default Signup;
