@@ -8,10 +8,10 @@ import useProductStore from "../store/productStore";
 
 const Products = () => {
   const { setProducts, total } = useProductStore();
-  const round = Math.ceil(total / 30);
+  const [totalPages, setTotalPages] = useState(1);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [totalPages, setTotalPages] = useState(round);
+  console.log("🚀 ~ Products ~ totalPages:", totalPages);
   const itemsPerPage = 30; // Number of items per page
 
   const getProduct = async (page) => {
@@ -26,6 +26,8 @@ const Products = () => {
       .then((res) => {
         useProductStore.setState({ total: res.data.total });
         setProducts(res.data.products);
+        const round = Math.ceil(res.data.total / 30);
+        setTotalPages(round);
       })
       .catch((error) => console.log(error))
       .finally(() => setLoading(false));
