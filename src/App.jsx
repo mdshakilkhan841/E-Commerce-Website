@@ -31,7 +31,6 @@ function App() {
                 <Routes>
                     {/* User Routes */}
                     <Route path="/*" element={<UserLayout />} />
-
                     {/* Admin Routes */}
                     <Route path="/e-shop-admin/*" element={<AdminLayout />} />
                 </Routes>

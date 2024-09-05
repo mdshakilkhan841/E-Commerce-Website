@@ -1,5 +1,5 @@
 import React from "react";
-import { FaArrowDown, FaPlus } from "react-icons/fa"
+import { FaArrowDown, FaPlus } from "react-icons/fa";
 
 const Customers = () => {
     return (
