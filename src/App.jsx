@@ -10,7 +10,7 @@ import Products from "./pages/Products";
 import ProductDetails from "./components/product/ProductDetails";
 import Checkout from "./components/cart/Checkout";
 import Login from "./components/Login";
-import Signup from "./components/Signup";
+import CreateAccount from "./components/CreateAccount";
 
 import Error404 from "./components/Error404";
 
@@ -45,7 +45,7 @@ function UserLayout() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route path="/signup" element={<CreateAccount />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<ProductDetails />} />
